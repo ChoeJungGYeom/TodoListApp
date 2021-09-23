@@ -31,23 +31,25 @@ public class TodoList {
 	}
 
 	public void sortByName() {
+		System.out.println("이름 순으로 정렬했습니다.");
 		Collections.sort(list, new TodoSortByName());
-
 	}
 
 	public void listAll() {
 		System.out.println("\n"
-				+ "inside list_All method\n");
+				+ "정렬된 목롭입니다.\n");
 		for (TodoItem myitem : list) {
 			System.out.println(myitem.getTitle() + myitem.getDesc());
 		}
 	}
 	
 	public void reverseList() {
+		System.out.println("이름 역순으로 정렬했습니다.");
 		Collections.reverse(list);
 	}
 
 	public void sortByDate() {
+		System.out.println("날짜 순으로 정렬했습니다.");
 		Collections.sort(list, new TodoSortByDate());
 	}
 
