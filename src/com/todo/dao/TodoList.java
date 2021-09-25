@@ -6,6 +6,7 @@ import com.todo.service.TodoSortByDate;
 import com.todo.service.TodoSortByName;
 
 public class TodoList {
+	
 	private List<TodoItem> list;
 
 	public TodoList() {
@@ -37,14 +38,15 @@ public class TodoList {
 
 	public void listAll() {
 		System.out.println("\n"
-				+ "정렬된 목롭입니다.\n");
-		for (TodoItem myitem : list) {
-			System.out.println(myitem.getTitle() + myitem.getDesc());
+				+ "정렬된 목록입니다.\n");
+		int count = 0;
+		for (TodoItem item : list) {
+			count++;
+			System.out.println(count+". [" + item.getCategory() + "]"+ item.getTitle() + " - " +item.getDesc() + " - " +item.getDue_date() + " [" + item.getCurrent_date()+"] ");
 		}
 	}
 	
 	public void reverseList() {
-		System.out.println("이름 역순으로 정렬했습니다.");
 		Collections.reverse(list);
 	}
 
@@ -62,5 +64,9 @@ public class TodoList {
 			if (title.equals(item.getTitle())) return true;
 		}
 		return false;
+	}
+	
+	public int size() {
+		return list.size();
 	}
 }
